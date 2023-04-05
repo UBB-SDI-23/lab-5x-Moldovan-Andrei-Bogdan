@@ -10,7 +10,7 @@ import { ServerError } from '../types/error-types';
 export class MechanicService {
 
   // private mechanicsURL = 'http://localhost:8080/mechanics';
-  private mechanicsURL = 'http://mppmainsrv-env.eba-jghymzcb.eu-north-1.elasticbeanstalk.com/mechanics';
+  private mechanicsURL = '/api/';
 
   constructor(protected httpClient: HttpClient) {
   }
