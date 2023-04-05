@@ -1,0 +1,58 @@
+.mechanics-page {
+    &__content {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1rem;
+    }
+
+    &__options {
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem;
+    }
+}
+
+.options {
+
+    &__sort-btn {
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 0.3rem;
+        cursor: pointer;
+    }
+
+    &__sort-btn:hover {
+        border-color: #F86E3A;
+    }
+
+    &__filter-body {
+        display: flex;
+        gap: 0.3rem;
+    }
+
+    &__option {
+        border: 1px solid black;
+        padding: 0.5rem;
+        cursor: pointer;
+        border-radius: 0.3rem;
+    }
+
+    &__option:hover {
+        color: #F86E3A;
+        border-color: #F86E3A;
+    }
+}
+
+.body {
+    &__submit-button {
+        border: 1px solid black;
+        background-color: white;
+        border-radius: 0.3rem;
+        cursor: pointer;
+    }
+
+    &__submit-button:hover {
+        border-color: #F86E3A;
+    }
+}

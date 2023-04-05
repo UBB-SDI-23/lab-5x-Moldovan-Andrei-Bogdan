@@ -1,0 +1,33 @@
+<div class="mechanic-details-page">
+    <nav class="mechanic-details-page__navigation">
+        <app-menu></app-menu>
+    </nav>
+
+    <div class="mechanic-details-page__content" *ngIf="mechanicWithCars">
+        <p>Id: {{mechanicWithCars.id}}</p>
+        <p>First Name: {{mechanicWithCars.firstName}}</p>
+        <p>Second Name: {{mechanicWithCars.secondName}}</p>
+        <p>Brand Expertise: {{mechanicWithCars.brandExpertise}}</p>
+        <p>Date Hired: {{mechanicWithCars.dateHired}}</p>
+        <p>Salary: {{mechanicWithCars.salary}}</p>
+        <p>Cars:</p>
+        <ul>
+            <li *ngFor="let car of mechanicWithCars.carEntityDTOList">
+                <div>
+                    ID: {{car.id}}//
+                    Brand: {{car.brand}}//
+                    Model: {{car.model}}//
+                    EngineHP: {{car.engineHP}}//
+                    EngineCC: {{car.engineCC}}//
+                    EngineType: {{car.engineType}}//
+                    color: {{car.color}}
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="mechanic-details-page__actions" *ngIf="mechanicWithCars">
+        <button mat-raised-button color="warn" class="actions__action action--delete" (click)="deleteBtnClick()">Delete</button>
+        <a [routerLink]="'update'" mat-raised-button color="primary" class="actions__action action--update">Update</a>
+    </div>
+    <h1 *ngIf="displayErrorFlag">The given id does not exist</h1>
+</div>

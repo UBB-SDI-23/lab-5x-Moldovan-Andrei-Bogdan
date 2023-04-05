@@ -1,0 +1,23 @@
+<div class="mechanics-page">
+    <nav class="mechanics-page__navigation">
+        <app-menu></app-menu>
+    </nav>
+
+    <div class="mechanics-page__options">
+        <a [routerLink]="'add'" class="options__option">
+            Add Mechanic
+        </a>
+
+        <div class="options__filter-body">
+            <input #salaryInput type="text" id="body__input" placeholder="Salary">
+            <button class="body__submit-button" (click)="filterMechanics()">Apply</button>
+        </div>
+
+        <button class="options__sort-btn" (click)="sortMechanics()">Sort Descending By Salary</button>
+    </div>
+    <main class="mechanics-page__content">
+        <ng-container *ngFor="let mechanic of mechanicsList">
+            <app-mechanic-entity [mechanic]="mechanic" (removeMechanicEvent)="removeMechanic($event)"></app-mechanic-entity>
+        </ng-container>
+    </main>
+</div>

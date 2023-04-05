@@ -1,0 +1,17 @@
+<a [routerLink]="mechanic.id.toString()">
+    <mat-card class="card">
+        <mat-card-header class="card__header">
+            <mat-card-title>Name: {{mechanic.firstName + ' ' + mechanic.secondName}}</mat-card-title>
+            <mat-card-subtitle>Id: {{mechanic.id}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content class="card__content">
+            <div class="content__brand-expertise">BrandExpertise: {{mechanic.brandExpertise}}</div>
+            <div class="content__date-hired">DateHired: {{mechanic.dateHired}}</div>
+            <div class="content__salary">Salary: {{mechanic.salary}}</div>
+        </mat-card-content>
+    </mat-card>
+</a>
+<div class="actions">
+    <button mat-raised-button color="warn" class="actions__action action--delete" (click)="deleteBtnClick()">Delete</button>
+    <a [routerLink]="'update/'+mechanic.id.toString()" mat-raised-button color="primary" class="actions__action action--update">Update</a>
+</div>

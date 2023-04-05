@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="form-container">
+    <h3>Mechanic Form</h3>  
+    <mat-form-field appearance = "fill">  
+      <mat-label> First Name </mat-label>  
+      <input matInput #firstNameInput [value]="exists === true ? mechanic.firstName : null">  
+    </mat-form-field>
+
+    <mat-form-field appearance = "fill">  
+      <mat-label> Second Name </mat-label>  
+      <input matInput #secondNameInput [value]="exists === true ? mechanic.secondName : null">  
+    </mat-form-field> 
+
+    <mat-form-field appearance = "fill">  
+      <mat-label> Brand Expertise </mat-label>  
+      <input matInput #brandExpertiseInput [value]="exists === true ? mechanic.brandExpertise : null">  
+    </mat-form-field> 
+
+    <mat-form-field appearance = "fill">  
+      <mat-label> Date Hired </mat-label>  
+      <input matInput #dateHiredInput [value]="exists === true ? mechanic.dateHired : null">  
+    </mat-form-field>
+    
+    <mat-form-field appearance = "fill">  
+      <mat-label> Salary </mat-label>  
+      <input matInput #salaryInput [value]="exists === true ? mechanic.salary : null">  
+    </mat-form-field>
+    
+    <button (click)="submitBtnClick()" class="form-container__submit-btn">Submit</button>
+</div>  
