@@ -10,7 +10,7 @@ import { ServerError } from '../types/error-types';
 export class MechanicService {
 
   // private mechanicsURL = 'http://localhost:8080/mechanics';
-  private mechanicsURL = '/mechanics/';
+  private mechanicsURL = '/mechanics';
 
   constructor(protected httpClient: HttpClient) {
   }
@@ -20,11 +20,11 @@ export class MechanicService {
   }
 
   getMechanicById(id: number): Observable<MechanicWithCars> {
-    return this.httpClient.get<MechanicWithCars>(`${this.mechanicsURL}${id}`);
+    return this.httpClient.get<MechanicWithCars>(`${this.mechanicsURL}/${id}`);
   }
 
   updateMechanic(id: number, updatedData: MechanicEntityDTO) {
-    return this.httpClient.put<String>(`${this.mechanicsURL}${id}`, updatedData);
+    return this.httpClient.put<String>(`${this.mechanicsURL}/${id}`, updatedData);
   }
 
   addMechanic(mechanicData: MechanicEntityDTO) {
@@ -32,7 +32,7 @@ export class MechanicService {
   }
 
   deleteMechanic(id: number): Observable<boolean> {
-    return this.httpClient.delete<boolean>(`${this.mechanicsURL}${id}`);
+    return this.httpClient.delete<boolean>(`${this.mechanicsURL}/${id}`);
   }
 
   getFilteredMechanics(salaryFilterValue: number): Observable<Array<Mechanic>> {
