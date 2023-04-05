@@ -10,32 +10,32 @@ import { ServerError } from '../types/error-types';
 export class MechanicService {
 
   // private mechanicsURL = 'http://localhost:8080/mechanics';
-  private mechanicsURL = '/api/';
+  private mechanicsURL = '/';
 
   constructor(protected httpClient: HttpClient) {
   }
 
   getAllMechanics(): Observable<Array<Mechanic>> {
-    return this.httpClient.get<Array<Mechanic>>(this.mechanicsURL);
+    return this.httpClient.get<Array<Mechanic>>(this.mechanicsURL+'mechanics');
   }
 
   getMechanicById(id: number): Observable<MechanicWithCars> {
-    return this.httpClient.get<MechanicWithCars>(`${this.mechanicsURL}${id}`);
+    return this.httpClient.get<MechanicWithCars>(`${this.mechanicsURL}mechanics/${id}`);
   }
 
   updateMechanic(id: number, updatedData: MechanicEntityDTO) {
-    return this.httpClient.put<String>(`${this.mechanicsURL}${id}`, updatedData);
+    return this.httpClient.put<String>(`${this.mechanicsURL}mechanics/${id}`, updatedData);
   }
 
   addMechanic(mechanicData: MechanicEntityDTO) {
-    return this.httpClient.post<String>(`${this.mechanicsURL}`, mechanicData);
+    return this.httpClient.post<String>(`${this.mechanicsURL}mechanics`, mechanicData);
   }
 
   deleteMechanic(id: number): Observable<boolean> {
-    return this.httpClient.delete<boolean>(`${this.mechanicsURL}${id}`);
+    return this.httpClient.delete<boolean>(`${this.mechanicsURL}mechanics/${id}`);
   }
 
   getFilteredMechanics(salaryFilterValue: number): Observable<Array<Mechanic>> {
-    return this.httpClient.get<Array<Mechanic>>(`${this.mechanicsURL}filter/${salaryFilterValue}`);
+    return this.httpClient.get<Array<Mechanic>>(`${this.mechanicsURL}mechanics/filter/${salaryFilterValue}`);
   }
 }
