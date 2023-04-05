@@ -10,7 +10,7 @@ import { ServerError } from '../types/error-types';
 export class MechanicService {
 
   // private mechanicsURL = 'http://localhost:8080/mechanics';
-  private mechanicsURL = '/api/mechanics';
+  private mechanicsURL = '/mechanics/';
 
   constructor(protected httpClient: HttpClient) {
   }
